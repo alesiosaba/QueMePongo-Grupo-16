@@ -1,0 +1,79 @@
+@startuml
+
+class Prenda {
+    tipoPrenda
+    material
+    colorPrincipal
+    colorSecundario
+    trama
+    criterioUso
+
+    categoria()
+}
+
+CriterioUso <-- Prenda
+
+enum CriterioUso {
+    VIAJE,
+    ENTRE_CASA,
+    PLAYA,
+    ...
+}
+
+Atuendo --> "  *  " Prenda
+
+class Atuendo {
+    prendas
+}
+
+Guardarropas --> "*" Prenda
+Guardarropas ..> Atuendo
+Guardarropas --> CriterioUso 
+Guardarropas --> "*" Propuesta
+
+class Guardarropas {
+    prendas
+    criterioUso
+    propuestas
+
+    guardarPropuesta(unaPropuesta)
+    aceptarPropuesta(unaPropuesta)
+    rechazarPropuesta(unaPropuesta)
+    agregarPrenda(unaPrenda)
+    quitarPrenda(unaPrenda)
+    List<Atuendo> todasLasPosiblesCombinaciones()
+}
+
+interface Propuesta {
+    aceptar(unGuardarropa)
+    deshacer(unGuardarropa)
+}
+
+Propuesta <|.. PropuestaAgregar
+Propuesta <|.. PropuestaQuitar
+Propuesta --> Prenda
+
+class PropuestaAgregar {
+    boolean aceptada
+    Prenda prenda
+    aceptar(unGuardarropa)
+    deshacer(unGuardarropa)
+}
+
+class PropuestaQuitar {
+    boolean aceptada
+    Prenda prenda
+    aceptar(unGuardarropa)
+    deshacer(unGuardarropa)
+}
+
+Usuario --> "  *  " Guardarropas
+
+class Usuario {
+    List<Guardarropas> guardarropas
+
+    crearGuardarropa(criterioUso, usuariosQueLoComparten)
+    agregarUnGuardarropa(unGuardarropa)
+}
+
+@enduml
