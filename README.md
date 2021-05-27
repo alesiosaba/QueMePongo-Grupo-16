@@ -1,4 +1,3 @@
-![QMP5](https://user-images.githubusercontent.com/62452207/119746387-c53d4280-be66-11eb-86e3-c203f6cde0ce.png)
 # TP - Que Me Pongo - Grupo 16
 
 ## [QMP1] Que Me Pongo - Primera iteración
