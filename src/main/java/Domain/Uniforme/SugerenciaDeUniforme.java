@@ -1,3 +1,4 @@
+package Domain.Uniforme;
 
 public class SugerenciaDeUniforme{
 

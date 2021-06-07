@@ -1,0 +1,77 @@
+@startuml
+
+AsesorDeImagen ..> ServicioMeteorologico
+AsesorDeImagen ..> Guardarropas
+AsesorDeImagen ..> Atuendo
+
+class AsesorDeImagen {
+    ServicioMeteorologico servicioMeteorologico
+
+    Atuendo sugerirAtuendo(direccion, guardarropas)
+}
+
+
+class EstadoDelTiempo {
+    Integer temperatura
+}
+
+EstadoDelTiempo <.. ServicioMeteorologico
+
+class ServicioMeteorologicoAccuWeather {
+    AccuWeatherAPI apiClima
+    Map<String, Object> condicionesClimaticas
+
+    EstadoDelTiempo estadoDelTiempo(String ubicacion)
+}
+
+ServicioMeteorologicoAccuWeather --> AccuWeatherAPI
+
+class AccuWeatherAPI {
+    List<Map<String, Object>> getWheather(String ciudad)
+}
+
+interface ServicioMeteorologico {
+    EstadoDelTiempo estadoDelTiempo(String ubicacion)
+}
+
+ServicioMeteorologico <|..  ServicioMeteorologicoAccuWeather
+
+
+class Prenda {
+    TipoPrenda tipo
+    Material material
+    Trama trama
+    Color color
+    Color colorSecundario
+    Integer temperaturaMaxima
+    CriterioUso criterioUso
+
+    Categoria categoria()
+    boolean aptaTemperatura(temperaturaActual)
+}
+
+Atuendo --> "  *  " Prenda
+Guardarropas --> "  *  " Prenda
+
+class Atuendo {
+    List<Prenda> prendas
+    boolean aptoParaTemperatura(temperaturaActual)
+}
+
+Guardarropas ..> Atuendo
+
+class Guardarropas {
+    List<Prenda> prendas
+    CriterioUso criterioUso
+
+    List<Atuendo> todasLasPosiblesCombinaciones()
+    void guardarPropuesta(unaPropuesta)
+    void rechazarPropuesta(unaPropuesta)
+    deshacerPropuesta(unaPropuesta)
+    void agregarPrenda(unaPrenda)
+    void quitarPrenda(unaPrenda)
+}
+
+
+
+@enduml

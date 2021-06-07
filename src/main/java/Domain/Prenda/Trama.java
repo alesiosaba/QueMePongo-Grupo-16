@@ -1,4 +1,4 @@
-package com.company;
+package Domain.Prenda;
 /*Como usuarie de QuéMePongo, quiero especificar qué trama tiene la tela de una prenda (lisa, rayada, con lunares, a cuadros o un estampado).*/
 
 public enum Trama {

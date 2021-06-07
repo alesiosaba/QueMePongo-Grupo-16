@@ -1,4 +1,4 @@
-package com.company;
+package Domain.Prenda;
 
 public class Color {
   int rojo,verde,azul;

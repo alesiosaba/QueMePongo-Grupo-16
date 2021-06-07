@@ -1,4 +1,4 @@
-package com.company;
+package Domain.Prenda;
 
 import java.util.List;
 

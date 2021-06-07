@@ -1,9 +1,8 @@
-package com.company;
+package Domain.Prenda;
 
-import java.util.List;
+import Domain.CriterioUso;
 
 import static java.util.Objects.requireNonNull;
-
 
 public class Prenda {
     TipoPrenda tipo;
@@ -11,11 +10,15 @@ public class Prenda {
     Trama trama;
     Color color;
     Color colorSecundario;
-    List<Prenda> prendas;
+    Integer temperaturaMaxima;
     // lo usamos para filtrar por criterio de uso en los guardarropas
     CriterioUso criterioUso;
 
-    Integer temperatura;
+    public Boolean aptaTemperatura(Integer temperaturaActual) {
+        return this.temperaturaMaxima < temperaturaActual;
+    }
+
+    public Categoria categoria(){ return tipo.getCategoria(); }
 
     public Prenda(TipoPrenda tipo, Material material,Trama trama ,Color color, Color colorSecundario) {
         this.tipo = requireNonNull(tipo,"el tipo de prenda es obligatorio");
@@ -25,16 +28,8 @@ public class Prenda {
         this.colorSecundario = colorSecundario;
     }
 
-    public void agregarPrenda(Prenda prenda){
-        prendas.add(prenda);
-    }
-
     public Integer getTemperatura() {
-        return temperatura;
-    }
-
-    public Boolean aptaTemperatura(Integer tempActual) {
-        return this.temperatura < tempActual;
+        return temperaturaMaxima;
     }
 
 }

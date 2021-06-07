@@ -1,7 +1,9 @@
-package com.company;
+package Domain.Uniforme;
 
-import java.util.List;
+import Domain.Prenda.Prenda;
+
 import static java.util.Objects.requireNonNull;
+
 public class Uniforme  {
   Prenda prendaSuperior;
   Prenda prendaInferior;

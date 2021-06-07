@@ -1,16 +1,17 @@
+package Domain.Guardarropas;
 
-public interface PropuestaAgregar {
+import Domain.Prenda.Prenda;
+
+public class PropuestaAgregar implements Propuesta{
   private boolean aceptada;
-  Prenda prenda;
+  private Prenda prenda;
 
-  @Overrride
   public void aceptar(Guardarropas unGuardarropa){
     aceptada = true;
 
     unGuardarropa.agregarPrenda(this.prenda);
   }
 
-  @Override
   public void deshacer(Guardarropas unGuardarropa){
     aceptada = false;
 

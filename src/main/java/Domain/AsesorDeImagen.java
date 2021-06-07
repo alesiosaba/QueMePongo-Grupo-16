@@ -1,25 +1,31 @@
+package Domain;
 
-//asumiremos que el Guardarropas ya es capaz de calcular la combinatoria de prendas y producir todos los atuendos posibles
-//(sin considerar si son útiles o no). También asumiremos que el existe un objeto seleccionador de atuendos,
-//que llamaremos AsesorDeImagen, que es responsable justamente de elegir entre los atuendos aquellos
-//que son aptos para el clima (y quizás, nuestras preferencias de moda en el futuro)
+import Domain.Guardarropas.Guardarropas;
+import Domain.ServicioMeteorologico.EstadoDelTiempo;
+import Domain.ServicioMeteorologico.ServicioMeteorologico;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class AsesorDeImagen {
-  private CondicionesClimaticas servicioMeteorologico;
+  private ServicioMeteorologico servicioMeteorologico;
 
   // se asigan la API de clima por constructor
 
-  // habiamos hecho una clase Sugerencia pero lo reemplazamos con este metodo
   public Atuendo sugerirAtuendo(String direccion, Guardarropas guardarropas) {
-    Map estadoDelTiempo = this.servicioMeteorologico.obtenerCondicionesClimaticas(direccion);
 
-    int temperatura = estadoDelTiempo.get("Temperature")
+    EstadoDelTiempo estadoDelTiempo = this.servicioMeteorologico.estadoDelTiempo(direccion);
+
+    Integer temperatura = estadoDelTiempo.getTemperatura();
 
     List<Atuendo> combinaciones = guardarropas.todasLasPosiblesCombinaciones();
 
+    // retorna una combinacion posible ("Atuendo") se elige uno al azar
     return combinaciones
-        .filter( combinacion -> combinacion.aptaParaTemperatura(temperatura) )
-        .first();
+        .stream()
+        .filter( combinacion -> combinacion.aptoParaTemperatura(temperatura) )
+        .collect(Collectors.toList())
+        .get(0);
   }
 }
 

@@ -1,5 +1,6 @@
-package com.company;
+package Domain.Uniforme;
 import static java.util.Objects.requireNonNull;
+
 public class Institucion {
   String nombre;
   Uniforme uniforme;

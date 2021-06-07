@@ -1,16 +1,17 @@
+package Domain.Guardarropas;
 
-public interface PropuestaQuitar {
+import Domain.Prenda.Prenda;
+
+public class PropuestaQuitar implements Propuesta{
   private boolean aceptada;
-  Prenda prenda;
+  private Prenda prenda;
 
-  @Overrride
   public void aceptar(Guardarropas unGuardarropa){
     aceptada = true;
 
     unGuardarropa.quitarPrenda(this.prenda);
   }
 
-  @Override
   public void deshacer(Guardarropas unGuardarropa){
     aceptada = false;
 

@@ -1,4 +1,4 @@
-package com.company;
+package Domain.Prenda;
 
 public class TipoPrenda{
   Categoria categoria;
@@ -7,7 +7,7 @@ public class TipoPrenda{
     this.categoria = categoria;
   }
 
-  public Categoria categoria() {
+  public Categoria getCategoria() {
     return this.categoria;
   }
 }

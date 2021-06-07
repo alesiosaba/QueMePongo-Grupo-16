@@ -1,3 +1,4 @@
+package Domain.Guardarropas;
 
 public interface Propuesta {
 

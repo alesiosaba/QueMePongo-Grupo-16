@@ -1,7 +1,7 @@
+package Domain;
 
-public Enum CriterioUso {
+public enum CriterioUso {
   VIAJE,
   ENTRE_CASA,
-  PLAYA,
-  ...
+  PLAYA
 }
