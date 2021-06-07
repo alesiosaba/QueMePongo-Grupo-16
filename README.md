@@ -27,6 +27,9 @@ https://docs.google.com/document/d/1sy9S9EeIQr8fhatKnfTCgOfjVniJDu2viI-Av0gn0xY/
 
 ![QMP4 - Diagrama de Clases](https://user-images.githubusercontent.com/62452207/119730402-0d9b3700-be4c-11eb-94a4-d0e3af7139b2.png)
 
+#### CORRECCIÓN - Tercera iteración [QMP4]
+
+![QMP4  - CORRECIÓN](https://user-images.githubusercontent.com/62452207/121094569-382ead80-c7c5-11eb-8805-d2d57922ce13.png)
 
 
 ## [QMP5] Que Me Pongo - Cuarta iteración
