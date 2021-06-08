@@ -2,7 +2,7 @@ package Domain.Guardarropas;
 
 public interface Propuesta {
 
-  public void aceptar(Guardarropas unGuardarropa);
-  public void deshacer(Guardarropas unGuardarropa);
+  void aceptar(Guardarropas unGuardarropa);
+  void deshacer(Guardarropas unGuardarropa);
 
 }

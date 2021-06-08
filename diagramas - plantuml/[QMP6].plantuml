@@ -1,0 +1,125 @@
+@startuml
+
+AsesorDeImagen ..> ServicioMeteorologico
+AsesorDeImagen ..> Atuendo
+
+class AsesorDeImagen {
+    ServicioMeteorologico servicioMeteorologico
+
+    Atuendo sugerirAtuendo(direccion, guardarropas)
+}
+
+class ServicioMeteorologicoAccuWeather {
+    AccuWeatherAPI apiClima
+
+    void actualizarAlertasMeteorologicas(String ciudad)
+}
+
+ServicioMeteorologicoAccuWeather --> AccuWeatherAPI
+
+class AccuWeatherAPI {
+    Map <String, List<String>> getAlerts(String ciudad)
+}
+
+interface ServicioMeteorologico {
+    void actualizarAlertasMeteorologicas(String ciudad)
+}
+
+ServicioMeteorologico <|..  ServicioMeteorologicoAccuWeather
+
+class Atuendo {
+    List<Prenda> prendas
+    boolean aptoParaTemperatura(temperaturaActual)
+}
+
+RepoDeUsuarios --> "  *  " Usuario
+
+class RepoDeUsuarios {
+    List<Usuario> usuarios
+
+    List<Usuario> getUsuarios()
+}
+
+class Usuario {
+    Atuendo sugerenciaDiaria
+    List<Accion> acciones
+
+    void actualizarSugerenciaDiaria()
+
+    void realizarAccionesSobreAlertas(List<Strings> alertasActuales)
+
+    List<String> ultimasAlertasMeteorologicas()
+
+    void agregarAccion(unaAccion)
+    void eliminarAccion(unaAccion)
+
+}
+
+Usuario --> " * " Accion
+
+interface Accion {
+    void realizarAccion(List<Strings> alertasActuales, Usuario usuario)
+}
+
+Accion <|-- NotificacionAccion
+
+class NotificacionAccion {
+    NotificacionService notificador
+
+    void realizarAccion(alertasActuales, usuarios)
+}
+
+NotificacionAccion --> NotificacionService
+
+class NotificacionService{
+   void notify(String text)
+}
+
+Accion <|-- MailAccion
+
+class MailAccion {
+    MailSender mailer
+
+    void realizarAccion(alertasActuales, usuario)
+}
+
+MailAccion --> MailSender
+
+class MailSender {
+    void send(address, message)
+}
+
+
+
+Accion <|-- RecalcularSugerenciaAccion
+
+class RecalcularSugerenciaAccion {
+    void realizarAccion(alertasActuales, usuario)
+}
+
+RegistroAlertasMeteorologicas --> RepoDeUsuarios
+
+class RegistroAlertasMeteorologicas {
+    List<Strings> alertasActuales
+    RepoDeUsuarios usuarios
+    ServicioMeteorologico servicioMeteorologico
+
+    void actualizarAlertasMeteorologicas(String ciudad)
+    void realizarAccionesSobreAlertas(List<Strings> alertas)
+}
+
+RegistroAlertasMeteorologicas --> ServicioMeteorologico
+
+@enduml
+
+Accion <|-- GranizoAccion
+
+class GranizoAccion {
+    void realizarAccion(List<Strings> alertasActuales, Usuario usuario)
+}
+
+Accion <|-- TormentaAccion
+
+class TormentaAccion {
+    void realizarAccion(List<Strings> alertasActuales, Usuario usuario)
+}
