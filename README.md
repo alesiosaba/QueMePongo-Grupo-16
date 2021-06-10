@@ -47,10 +47,7 @@ https://docs.google.com/document/d/1NxqhJj70kt-_4aw-CawlISdJZyedzoOcLAVJAZVZISE/
 
 #### Quinta iteración [QMP6]
 
-![QMP6](https://user-images.githubusercontent.com/62452207/121110393-98344c80-c7e3-11eb-80c0-d6f107933286.png)
-
-
-
+![QMP6](https://user-images.githubusercontent.com/62452207/121448754-aebadf00-c96e-11eb-9333-cafb7a31a1de.png)
 
 
 
