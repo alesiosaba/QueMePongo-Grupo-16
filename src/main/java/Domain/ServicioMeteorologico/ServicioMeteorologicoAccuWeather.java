@@ -1,6 +1,7 @@
 package Domain.ServicioMeteorologico;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class ServicioMeteorologicoAccuWeather implements ServicioMeteorologico {
@@ -14,5 +15,10 @@ public class ServicioMeteorologicoAccuWeather implements ServicioMeteorologico {
     Integer temperaturaActual = (Integer) temperatura.get("Value");
 
     return new EstadoDelTiempo(temperaturaActual);
+  }
+
+  @Override
+  public List<String> actualizarAlertasMeteorologicas(String ubicacion) {
+    return (List<String>) apiClima.getAlerts(ubicacion);
   }
 }
