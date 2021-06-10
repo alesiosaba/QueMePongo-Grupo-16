@@ -41,15 +41,14 @@ class RepoDeUsuarios {
 }
 
 class Usuario {
+    String direccion
+    AsesorDeImagen asesorDeImagen
+    List<Guardarropas> guardarropas
     Atuendo sugerenciaDiaria
     List<Accion> acciones
 
     void actualizarSugerenciaDiaria()
-
-    void realizarAccionesSobreAlertas(List<Strings> alertasActuales)
-
-    List<String> ultimasAlertasMeteorologicas()
-
+    void realizarAccionesSobreAlertas(alertasActuales)
     void agregarAccion(unaAccion)
     void eliminarAccion(unaAccion)
 
@@ -104,7 +103,7 @@ class RegistroAlertasMeteorologicas {
     RepoDeUsuarios usuarios
     ServicioMeteorologico servicioMeteorologico
 
-    void actualizarAlertasMeteorologicas(String ciudad)
+    void actualizarAlertasMeteorologicas()
     void realizarAccionesSobreAlertas(List<Strings> alertas)
 }
 

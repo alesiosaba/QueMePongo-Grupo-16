@@ -23,9 +23,8 @@ public class AsesorDeImagen {
     // retorna una combinacion posible ("Atuendo") se elige uno al azar
     return combinaciones
         .stream()
-        .filter( combinacion -> combinacion.aptoParaTemperatura(temperatura) )
+        .filter(combinacion -> combinacion.aptoParaTemperatura(temperatura))
         .collect(Collectors.toList())
         .get(0);
   }
 }
-
