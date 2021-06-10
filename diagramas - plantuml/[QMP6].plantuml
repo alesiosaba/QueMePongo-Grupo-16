@@ -37,8 +37,13 @@ RepoDeUsuarios --> "  *  " Usuario
 class RepoDeUsuarios {
     List<Usuario> usuarios
 
+    void actualizarSugerenciasDiarias()
     List<Usuario> getUsuarios()
 }
+
+Usuario --> AsesorDeImagen
+
+Usuario --> Atuendo
 
 class Usuario {
     String direccion
@@ -110,15 +115,3 @@ class RegistroAlertasMeteorologicas {
 RegistroAlertasMeteorologicas --> ServicioMeteorologico
 
 @enduml
-
-Accion <|-- GranizoAccion
-
-class GranizoAccion {
-    void realizarAccion(List<Strings> alertasActuales, Usuario usuario)
-}
-
-Accion <|-- TormentaAccion
-
-class TormentaAccion {
-    void realizarAccion(List<Strings> alertasActuales, Usuario usuario)
-}
