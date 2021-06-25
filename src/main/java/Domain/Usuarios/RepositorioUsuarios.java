@@ -1,4 +1,4 @@
-package Domain.Usuario;
+package Domain.Usuarios;
 
 import java.util.ArrayList;
 import java.util.List;

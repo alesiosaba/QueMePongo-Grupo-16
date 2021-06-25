@@ -1,5 +1,5 @@
-package Domain.Usuario.Accion;
-import Domain.Usuario.Usuario;
+package Domain.Usuarios.Accion;
+import Domain.Usuarios.Usuario;
 
 import java.util.List;
 

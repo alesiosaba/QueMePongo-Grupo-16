@@ -1,4 +1,4 @@
-package Domain.Usuario.Accion;
+package Domain.Usuarios.Accion;
 
 public class NotificacionService {
   public void notify(String text){

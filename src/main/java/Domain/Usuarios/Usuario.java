@@ -1,10 +1,10 @@
-package Domain.Usuario;
+package Domain.Usuarios;
 
 import Domain.AsesorDeImagen;
 import Domain.Atuendo;
 import Domain.CriterioUso;
 import Domain.Guardarropas.Guardarropas;
-import Domain.Usuario.Accion.Accion;
+import Domain.Usuarios.Accion.Accion;
 
 import java.util.List;
 
@@ -19,10 +19,10 @@ public class Usuario {
 
 
   public void crearGuardarropa(CriterioUso criterioUso, List<Usuario> usuariosQueLoComparten){
-      Guardarropas nuevoGuardarropas = new Guardarropas(criterioUso);
+    Guardarropas nuevoGuardarropas = new Guardarropas(criterioUso);
 
-      // cada usuario debe conocer el nuevo guardarropa compartido
-      usuariosQueLoComparten.forEach(usuario -> usuario.agregarUnGuardarropa(nuevoGuardarropas));
+    // cada usuario debe conocer el nuevo guardarropa compartido
+    usuariosQueLoComparten.forEach(usuario -> usuario.agregarUnGuardarropa(nuevoGuardarropas));
   }
 
   public void agregarUnGuardarropa(Guardarropas unGuardarropa){ guardarropas.add(unGuardarropa); }
