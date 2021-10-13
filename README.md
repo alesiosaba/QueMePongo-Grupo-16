@@ -49,8 +49,11 @@ https://docs.google.com/document/d/1NxqhJj70kt-_4aw-CawlISdJZyedzoOcLAVJAZVZISE/
 
 ![QMP6](https://user-images.githubusercontent.com/62452207/121448754-aebadf00-c96e-11eb-9333-cafb7a31a1de.png)
 
+## [QMP7] Que Me Pongo - Sexta iteración
 
+https://docs.google.com/document/d/1ERlDghk47Yc1_V1SQ7oCnZAC4bubHx7ZhQXS3naKMJA/edit
 
+La resolución de esta iteración se encuentra en el root del repositorio como QMP7.md
 
 # java-base-project
 
