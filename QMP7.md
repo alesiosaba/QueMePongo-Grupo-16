@@ -1,8 +1,8 @@
-## Como usuarie de QueMePongo quiero ver todas las prendas que tengo en mi guardarropas desde el navegador para poder administrarlas
+### Como usuarie de QueMePongo quiero ver todas las prendas que tengo en mi guardarropas desde el navegador para poder administrarlas
 
 GET /usuario/{idUsuario}/guardarropas/{idGuardarropas}/prendas
 
-##### Como body del request podria restringirse que campos mostrar en el body de la respuesta
+Como body del request podria restringirse que campos mostrar en el body de la respuesta
 
 Código respuesta:
 - 200 : Prendas encontradas
@@ -22,11 +22,9 @@ Body respuesta (JSON):
 ]
 ```
 
-## Como usuario de QueMePongo, quiero crear una prenda desde el navegador
+### Como usuario de QueMePongo, quiero crear una prenda desde el navegador
 
 POST /guardarropas/{idGuardarropas}/prendas
-
-##### body del request tendria que ser un JSON con la estructura de una prenda
 
 ```
 Body request (JSON):
@@ -38,6 +36,12 @@ Body request (JSON):
 }
 ```
 
+Código respuesta:
+- 200 : Prenda creada
+- 400 : Algun dato esta mal
+- 401 : No hay usr logueado
+- 403 : User no tiene permisos
+
 ```
 Body respuesta (JSON):
 {
@@ -48,24 +52,18 @@ Body respuesta (JSON):
 }
 ```
 
-Código respuesta:
-200 - Prenda creada
-400 - Algun dato esta mal
-401 - No hay usr logueado
-403 - User no tiene permisos
-
-## Como usuarie de QueMePongo quiero ver una prenda en particular que tengo en mi guardarropas para poder editarla
+### Como usuarie de QueMePongo quiero ver una prenda en particular que tengo en mi guardarropas para poder editarla
 
 GET /guardarropas/{idGuardarropas}/prendas/{idPrendas}
 
-##### Algo en el body request? 
+Como body del request podria restringirse que campos mostrar en el body de la respuesta
 
 Código respuesta:
-200 : Prenda encontrada
-404 : Prenda no encontrada
+- 200 :  Prenda encontrada
+- 404 : Prenda no encontrada
 
 ```
-Body respuesta con parametro 157 (JSON):
+Body respuesta con parametro idPrendas con valor 157 (JSON):
 {
     "id_prenda": 157,
     "tipo": "pantalon",
@@ -74,29 +72,36 @@ Body respuesta con parametro 157 (JSON):
 }
 ```
 
-## Como usuarie de QueMePongo, quiero poder eliminar una prenda de mi guardarropas
+### Como usuarie de QueMePongo, quiero poder eliminar una prenda de mi guardarropas
 
 DELETE /guardarropas/{idGuardarropas}/prendas/{idPrendas}
 
-##### Creo que no habria necesidad de body request
-
 Código respuesta:
-200 : Ok, Prenda encontrada y eliminada
-404 : Prenda no encontrada
+- 200 : Ok, Prenda encontrada y eliminada
+- 404 : Prenda no encontrada
 
-BODY RESPUESTA
+```
+Body respuesta con idPrendas con valor 155 (JSON):
+{
+    "id_prenda": 155,
+    "tipo": "pantalon",
+    "material": "algodón",
+    "color": "255,255,255"
+}
+```
 
-## Como usuarie de QueMePongo, quiero poder ver mis eventos para administrarlos
+### Como usuarie de QueMePongo, quiero poder ver mis eventos para administrarlos
 
 GET /usuario/{idUsuario}/eventos
 
-###### Como body del request podria restringirse que campos mostrar en el body de la respuesta
+Como body del request podria restringirse que campos mostrar en el body de la respuesta
 
 Código respuesta:
-200 : Eventos encontrados
-404 : Eventos no encontrados
+- 200 : Eventos encontrados
+- 404 : Eventos no encontrados
 
-```Json (Ejemplo)
+```
+Body respuesta (JSON):
 [
     {
         "id_evento": 1,
@@ -108,17 +113,18 @@ Código respuesta:
 ]  
 ```
 
-# Como usuarie de QueMePongo, quiero poder abrir las sugerencias de prendas para un evento en mi navegador
+### Como usuarie de QueMePongo, quiero poder abrir las sugerencias de prendas para un evento en mi navegador
 
 GET /usuario/{idUsuario}/eventos/{idEvento}/sugerencias
 
-###### Como body del request podria restringirse que campos mostrar en el body de la respuesta
+Como body del request podria restringirse que campos mostrar en el body de la respuesta
 
 Código respuesta:
-200 : Sugerencias encontradas
-404 : Sugerencias no encontradas
+- 200 : Sugerencias encontradas
+- 404 : Sugerencias no encontradas
 
-```json
+```
+Body respuesta (JSON):
 [
     {
     "id_sugerencia": 1,
